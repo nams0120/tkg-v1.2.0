@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: for-tls
+spec:
+  finalizers:
+  - kubernetes
+
+---
+
+apiVersion: v1
+data:
+  tls.crt: <wildcard.crt>
+  tls.key: <wildcard.key>
+kind: Secret
+metadata:
+  name: wild-tls
+  namespace: for-tls
+type: kubernetes.io/tls
+
+---
+
+apiVersion: projectcontour.io/v1
+kind: TLSCertificateDelegation
+metadata:
+  name: wild-delegation
+  namespace: for-tls
+spec:
+  delegations:
+    - secretName: wild-tls
+      targetNamespaces:
+      - "*"
