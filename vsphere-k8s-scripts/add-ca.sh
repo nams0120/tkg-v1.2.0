@@ -1,0 +1,1 @@
+./tkg-add-ca-via-sv.sh --vc_ip dr-vcsacomp.cnd.lab --vc_admin_passowrd VMware1! --vc_admin_user administrator@vsphere.local --vc_root_password VMware1! --sv_ip 10.30.10.1 -c cluster-with-ca -n test --ca_file_path /home/nams/cert/ca.crt
