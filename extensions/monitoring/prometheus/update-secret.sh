@@ -1,0 +1,1 @@
+kubectl create secret generic prometheus-data-values --from-file=values.yaml=/root/data/extensions/monitoring/prometheus/vsphere/prometheus-data-values.yaml -n tanzu-system-monitoring -o yaml --dry-run=client | kubectl replace -f -

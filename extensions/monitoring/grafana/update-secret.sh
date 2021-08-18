@@ -1,0 +1,1 @@
+kubectl create secret generic grafana-data-values --from-file=values.yaml=/root/data/extensions/monitoring/grafana/vsphere/grafana-data-values.yaml -n tanzu-system-monitoring -o yaml --dry-run=client | kubectl replace -f -

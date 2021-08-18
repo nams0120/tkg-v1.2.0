@@ -1,0 +1,1 @@
+kubectl create secret generic fluent-bit-data-values --from-file=values.yaml=/home/nams/data/extensions/logging/fluent-bit/elasticsearch/fluent-bit-data-values-syslog.yaml -n tanzu-system-logging -o yaml --dry-run=client | kubectl replace -f -

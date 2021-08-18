@@ -1,0 +1,15 @@
+#@data/values
+#@overlay/match-child-defaults missing_ok=True
+---
+logging:
+  image:
+    repository: registry.tkg.vmware.run
+tkg:
+  instance_name: "test"
+  cluster_name: "cluster-with-ca"
+fluent_bit:
+  log_level: "info"
+  output_plugin: "elasticsearch"
+  elasticsearch:
+    host: "1.1.1.1"
+    port: "9200"
